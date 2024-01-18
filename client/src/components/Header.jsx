@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="bg-slate-200 shadow-md px-2 sm:px-0 ">
+    <header className="bg-slate-200 shadow-md px-2 sm:px-0">
       <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
         <Link to="/">
           <h1 className="cursor-pointer font-bold text-sm sm:text-xl flex flex-wrap">
@@ -12,7 +12,7 @@ const Header = () => {
             <span className="text-slate-700">Estate</span>
           </h1>
         </Link>
-        <form className="w-40 md:w-64 xl:w-96 bg-slate-100 p-2 rounded-lg flex justify-between items-center">
+        <form className="w-40 md:w-64 xl:w-1/2 bg-slate-100 p-2 rounded-lg flex justify-between items-center">
           <input
             type="text"
             placeholder="Search..."
