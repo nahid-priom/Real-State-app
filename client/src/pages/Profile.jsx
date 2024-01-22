@@ -8,7 +8,7 @@ import {
   uploadBytesResumable,
 } from "firebase/storage";
 import { app } from "../firebase";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Profile = () => {
   const fileRef = useRef(null);
@@ -85,6 +85,11 @@ const Profile = () => {
         <button className="bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80">
           Update
         </button>
+        <Link to="create-listing">
+          <button className="bg-green-700 w-full text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80">
+            Create Listing
+          </button>
+        </Link>
       </form>
       <div className="flex justify-between mt-5">
         <span className="text-red-700 cursor-pointer">Delete Account</span>
