@@ -1,6 +1,7 @@
 import { errorHandler } from "../utils/error.js";
 import bcryptjs from "bcryptjs";
 import User from "../models/user.models.js";
+import Listing from "../models/lisitng.models.js";
 
 const test = (req, res) => {
   res.json({
@@ -28,8 +29,17 @@ export const updateUser = async (req, res, next) => {
       },
       { new: true }
     );
-    const {password, ...rest} = updatedUser._doc
-    res.status(200).json(rest)
+    const { password, ...rest } = updatedUser._doc;
+    res.status(200).json(rest);
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const getUserListings = async (req, res, next) => {
+  try {
+    const listings = await Listing.find({ userRef: req.params.id });
+    res.status(200).json(listings);
   } catch (error) {
     next(error);
   }
