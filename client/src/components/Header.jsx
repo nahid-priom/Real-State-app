@@ -15,12 +15,12 @@ const Header = () => {
     navigate(`/search?${searchQuery}`);
   };
   useEffect(() => {
-    const urlParams = new URLSearchParams(location.search)
-    const searchTermFromUrl = urlParams.get('searchTerm')
-    if(searchTermFromUrl) {
-      setSearchTerm(searchTermFromUrl)
+    const urlParams = new URLSearchParams(location.search);
+    const searchTermFromUrl = urlParams.get("searchTerm");
+    if (searchTermFromUrl) {
+      setSearchTerm(searchTermFromUrl);
     }
-  }, [location.search])
+  }, [location.search]);
   return (
     <header className="bg-slate-200 shadow-md px-2 sm:px-0">
       <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
@@ -46,23 +46,16 @@ const Header = () => {
           </button>
         </form>
         <ul className="flex gap-4">
-          <Link to="/">
-            <li className="hidden sm:inline text-slate-700 hover:underline cursor-pointer">
-              Home
-            </li>
-          </Link>
-          <Link to="/about">
-            <li className="hidden sm:inline text-slate-700 hover:underline cursor-pointer">
-              About
-            </li>
-          </Link>
           <Link to="/profile">
             {currentUser ? (
-              <img
-                className="rounded-full h-7 w-7 object-cover"
-                src={currentUser.avater}
-                alt="profile"
-              />
+              <div className="flex justify-center items-center gap-2">
+                <img
+                  className="rounded-full h-10 w-10 object-cover"
+                  src={currentUser.avater}
+                  alt="profile"
+                />
+                <span>Profile</span>
+              </div>
             ) : (
               <li className="inline text-slate-700 hover:underline cursor-pointer">
                 Sign In
